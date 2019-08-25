@@ -1,5 +1,5 @@
 {% set name = "pyplis" %}
-{% set version = "1.4.3" %}
+{% set version = "1.4.4" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 06d2e58986efab8bb46a4b5ca27e73790686d83967039732b7746f286e009c66
+  sha256: 341a393a614de621e5376b29f4154f80a3fa07c754d89051c4604d7439e013c0
 
 build:
   noarch: python
