@@ -6,20 +6,20 @@ package:
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 341a393a614de621e5376b29f4154f80a3fa07c754d89051c4604d7439e013c0
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
   run:
-    - python
+    - python >={{ python_min }}
     - numpy >=1.11
     - scipy
     - pandas
@@ -32,6 +32,8 @@ requirements:
     - six
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pyplis
     - pyplis.test
