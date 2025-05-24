@@ -38,8 +38,6 @@ test:
   requires:
     - pytest
     - python >=3.11
-  imports:
-    - pyplis
   commands:
     - pytest -Wi pyplis/test
 
