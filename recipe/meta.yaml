@@ -1,44 +1,51 @@
 {% set name = "pyplis" %}
-{% set version = "1.4.4" %}
+{% set version = "1.5.0rc1" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 341a393a614de621e5376b29f4154f80a3fa07c754d89051c4604d7439e013c0
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 64497a6f58c2cdd2faf39ed8bf0a4fa2e6ff1bf50de0bdca833d4463fda2876f
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
+    - setuptools
+    - setuptools_scm
   run:
-    - python
-    - numpy >=1.11
-    - scipy
+    - python >={{ python_min }}
+    - numpy     
+    - scipy 
     - pandas
-    - astropy
-    - matplotlib-base >=1.5
+    - astropy-base
+    - matplotlib-base
     - basemap
     - opencv
-    - geonum
-    - pydoas
-    - six
+    - geonum>=1.6
+    - pydoas>=2.0.3
+    - pyproj
+    - progressbar
 
 test:
+  requires:
+    - pytest
+    - python {{ python_min }}
   imports:
     - pyplis
-    - pyplis.test
+  commands:
+    - pytest -Wi pyplis/test
 
 about:
-  license: GPL-3.0
   home: https://github.com/jgliss/pyplis
+  license: GPL-3.0-only
   license_family: GPL
   license_file: LICENSE
   summary: Python library for the analysis UV SO2 camera data
