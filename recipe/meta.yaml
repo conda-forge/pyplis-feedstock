@@ -17,11 +17,11 @@ build:
 requirements:
   host:
     - pip
-    - python {{ python_min }}
+    - python >=3.11
     - setuptools
     - setuptools_scm
   run:
-    - python >={{ python_min }}
+    - python >=3.11
     - numpy     
     - scipy 
     - pandas
@@ -37,7 +37,7 @@ requirements:
 test:
   requires:
     - pytest
-    - python {{ python_min }}
+    - python >=3.11
   imports:
     - pyplis
   commands:
