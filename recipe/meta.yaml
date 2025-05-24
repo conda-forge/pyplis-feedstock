@@ -42,6 +42,7 @@ test:
   commands:
     - conda info --envs
     - conda list
+    - which python
     - python -c "import pyplis; print(pyplis.__version__)"
     - pytest -Wi pyplis/test
 
