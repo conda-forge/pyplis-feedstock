@@ -40,8 +40,6 @@ test:
     - pytest
     - python {{ python_min }}
   commands:
-    - ls
-    - ls pyplis
     - python -c "import pyplis; print(pyplis.__version__)"
     - pytest -Wi pyplis/test
 
