@@ -29,8 +29,8 @@ requirements:
     - matplotlib-base
     - basemap
     - opencv
-    - geonum>=1.6
-    - pydoas>=2.0.3
+    - geonum >=1.6
+    - pydoas >=2.0.3
     - pyproj
     - progressbar
 
