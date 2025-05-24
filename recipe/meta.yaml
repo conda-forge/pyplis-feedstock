@@ -23,6 +23,7 @@ requirements:
     - setuptools_scm
   run:
     - python >={{ python_min }}
+    - setuptools
     - numpy     
     - scipy 
     - pandas
