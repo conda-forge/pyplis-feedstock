@@ -1,12 +1,12 @@
 {% set name = "pyplis" %}
-{% set version = "1.5.0rc2" %}
+{% set version = "1.5.0" %}
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d6f95da4ba3a2f75ba6c277c8260decfaf2eae25f4765ae21c03c76e7bd6f7d9
+  sha256: 630dc57acb05eb2cb6f5a92617814dafddcdeacf12ddfebd8d065db638f11d99
 
 build:
   noarch: python
